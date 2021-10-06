@@ -1,0 +1,17 @@
+1. In what order should exception handlers appear?
+You should start with the most specific exceptions, and the more general ones should go at the end.
+
+2. How should an Error be handled in contrast to an Exception?
+An error should not typically be handled at runtime, rather the programmer should fix the code causing that error. However, with exceptions, at times a programmer should try to catch and recover from exceptions at runtime if it is possible (if they can't just eliminate the problem in the code).
+
+3. Besides Object, what class are all Errors and Exceptions inheriting from? What are some methods that are inherited?
+They all inherit from Throwable. Some methods that are inherited include getCause(), getMessage(), getStackTrace, printStackTrace(), toString(), initCause(Throwable cause).
+
+4. What are some exceptions that may occur when dealing with IO (input/output)?
+FileNotFoundException - when you are trying to input and read a file that may not exist.
+EOFException - exception thrown when the end of a file is reached
+UnsupportedEncodingException - thrown when a file has an unsupported encoding
+SocketException - when the socket connection is closed.
+
+5. What are the key differences between checked and unchecked exceptions?
+Checked exceptions are usually able to be recovered from, should be handled at compile-time (by the program, ex.FileNotFound), while un-checked exceptions might not happen if things are working as they should, happen at runtime, and are not always needed to be there (you may want to check your code, ex.ArithmeticException).
